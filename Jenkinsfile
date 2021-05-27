@@ -96,11 +96,11 @@ pipeline {
                         "files": [
                         {
                             "pattern": "target/*dummy*.jar",
-                            "target": "libs-release-local/dummy"
+                            "target": "default-generic-local/dummy"
                         },
                         {
                             "pattern": "target/pom.xml",
-                            "target": "libs-release-local/dummy"
+                            "target": "default-generic-local/dummy"
                         }
                         ]
                     }''',
