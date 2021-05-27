@@ -78,7 +78,7 @@ pipeline {
     // Tool name from Jenkins configuration.
                     tool: 'm3',
                     pom: 'pom.xml',
-                    goals: 'clean install',
+                    goals: 'install',
     // Maven options.
                     opts: '-Xms1024m -Xmx4096m',
                     resolverId: 'resolver',
