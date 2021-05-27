@@ -65,11 +65,11 @@ pipeline {
                         "files": [
                             {
                             "pattern": "*dummy*.jar",
-                            "target": "libs-release-local/dummy"
+                            "target": "libs-release-local/dummy/"
                             },
                             {
                             "pattern": "pom.xml",
-                            "target": "libs-release-local/dummy"
+                            "target": "libs-release-local/dummy/"
                             }
                         ]
                     }''',
@@ -77,10 +77,10 @@ pipeline {
                     // as build artifacts.
                     // If not set, the files will be associated with the default build name and build number (i.e the
                     // the Jenkins job name and number).
-                    buildName: 'holyFrog',
-                    buildNumber: '42',
+                    // buildName: 'holyFrog',
+                    // buildNumber: '42',
                     // Optional - Only if this build is associated with a project in Artifactory, set the project key as follows.
-                    project: 'my-project-key'
+                    // project: 'my-project-key'
  
                 )
 
