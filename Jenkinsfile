@@ -60,7 +60,7 @@ pipeline {
         stage ('Publish to Artifactory') {
             steps {
                 rtUpload (
-                    serverId: 'Artifactory-1',
+                    serverId: 'artifactory1',
                     spec: '''{
                         "files": [
                             {
