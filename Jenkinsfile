@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     environment {
         MAVEN_HOME = tool 'm3'
         SONAR_TOKEN='e396e9a901ac1d30b4977ac89b08801a68897dfa'
@@ -8,7 +8,7 @@ pipeline {
         DOCKERHUB_CREDENTIALS = credentials('sreejagajelli-dockerhub')
     }
     options { 
-        quietPeriod(30) 
+        quietPeriod(5) 
     }
     parameters { 
             choice(name: 'ENV_TO_DEPLOY', 
