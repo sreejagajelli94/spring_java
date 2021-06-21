@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'dockerserver'
+    }
     environment {
         MAVEN_HOME = tool 'm3'
         SONAR_TOKEN='e396e9a901ac1d30b4977ac89b08801a68897dfa'
