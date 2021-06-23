@@ -5,7 +5,7 @@ pipeline {
         SONAR_TOKEN='e396e9a901ac1d30b4977ac89b08801a68897dfa'
         APP_HOME='/home/app'
         PRAGRA_BATCH='devs'
-        DOCKERHUB_CREDENTIALS = credentials('sreejagajelli-dockerhub')
+//         DOCKERHUB_CREDENTIALS = credentials('sreejagajelli-dockerhub')
     }
     options { 
         quietPeriod(5) 
@@ -58,21 +58,23 @@ pipeline {
                 sh 'mvn package'
             }
         }
-        stage('Build Docker Image') {
-            steps {
-                sh 'docker  build -t sreejagajelli/httpd_apache:latest .'
-            }
-        }
-        stage('Docker Login'){
-            steps {
-                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-            }
-        }
-        stage('Docker Image Push') {
-            steps {
-                sh 'docker push sreejagajelli/httpd_apache:latest'
-            }
-        }
+//         stage('Build Docker Image') {
+//             steps {
+//                 sh 'docker  build -t sreejagajelli/httpd_apache:latest .'
+//             }
+//         }
+//         stage('Docker Login'){
+//             steps {
+//                 withCredentials([string(credentialsId:'docker_hub_pass', variable: 'docker_hub_pass')]){
+//                     sh "docker login -u sreejagajelli -p ${docker_hub_pass}"
+//                 }
+//             }
+//         }
+//         stage('Docker Image Push') {
+//             steps {
+//                 sh 'docker push sreejagajelli/httpd_apache:latest'
+//             }
+//         }
         stage ('Publish to Artifactory') {
             steps {
                 rtUpload (
@@ -107,7 +109,7 @@ pipeline {
     post {
         always {
             echo 'ALL GOOD '
-            sh 'docker logout'
+//             sh 'docker logout'
         }
     }
 
