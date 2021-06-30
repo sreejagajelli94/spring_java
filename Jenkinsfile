@@ -60,7 +60,7 @@ pipeline {
         }
         stage('Docker Login') {
             steps {
-                sh 'docker login -u sreejagajelli -p "Maple@2021"
+                sh 'docker login -u sreejagajelli -p "Maple@2021"'
             }
         }
         stage('Build Docker Image') {
