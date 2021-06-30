@@ -58,7 +58,7 @@ pipeline {
                 sh 'mvn package'
             }
         }
-        stage('Docker Login'){
+        stage('Docker Login') {
             steps {
                 sh 'docker login -u sreejagajelli -p "Maple@2021"
             }
